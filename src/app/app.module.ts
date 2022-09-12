@@ -19,13 +19,19 @@ import { SignupComponent } from './login/signup/signup.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { ChatComponent } from './home/chat/chat.component';
+import { SearchComponent } from './home/search/search.component';
+import { SidePanelComponent } from './home/side-panel/side-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    ChatComponent,
+    SearchComponent,
+    SidePanelComponent
   ],
   imports: [
     BrowserModule,
