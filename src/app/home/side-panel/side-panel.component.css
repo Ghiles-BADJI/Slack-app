@@ -1,0 +1,44 @@
+:host {
+    background-color: #350d36;
+    height: 100%;
+    flex: 1;
+}
+
+.example-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+
+.example-sidenav {
+    width: 220px;
+    background-color: #350d36;
+}
+  
+
+.mat-toolbar {
+    background-color: #350d36;
+}
+
+.mat-drawer-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mat-button {
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+    padding: 0;
+}
+
+.mat-toolbar.handset {
+    padding: 0 8px 0 0;
+}
+
+
+
+
+

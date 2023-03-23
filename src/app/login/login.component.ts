@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl  } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 import { LoginHttpService } from './login-http.service';
 import { User } from './model/user.model';
@@ -31,8 +32,7 @@ export class LoginComponent implements OnInit  {
         (user: User) => { // tout se passe bien
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
-          console.log('userlogin',user)
-          this.router.navigate(['/home']);
+          this.router.navigate(['/app/' + environment.workspaceId]);
         }
       },
       (err) => { // retour erreur

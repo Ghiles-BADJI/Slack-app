@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    background-color: rgb(89,89,89);
+    overflow: auto;
+}
+
+.chat-container {
+    border: 1px;
+    padding: 10px;
+    margin: 10px;
+    height: 100%;
+    overflow: auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chat-container {
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+    /* Foreground, Background */
+    scrollbar-color: #999 #333;
+  }
+  .chat-container::-webkit-scrollbar {
+    width: 10px; /* Mostly for vertical scrollbars */
+    height: 10px; /* Mostly for horizontal scrollbars */
+  }
+  .chat-container::-webkit-scrollbar-thumb { /* Foreground */
+    background: #999;
+    border-radius: 10px;
+  }
+  .chat-container::-webkit-scrollbar-track { /* Background */
+    background: #333;
+    border-radius: 10px;
+  } 

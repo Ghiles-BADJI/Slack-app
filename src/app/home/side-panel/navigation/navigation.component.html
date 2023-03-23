@@ -1,0 +1,51 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #drawer class="example-sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">
+        <button mat-button color="primary">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+          <span>Non lus</span>
+        </button>
+
+        <div *ngFor="let message of unreadMessages">
+          <app-unread-messages [unreadMessage]="message"></app-unread-messages>
+        </div>
+      </a>
+      <a mat-list-item href="#">
+        <button mat-button color="primary">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+          <span>Canaux</span>
+        </button>
+        <div *ngFor="let chanel of chanelList">
+          <app-chanel [chanel]="chanel"></app-chanel>
+        </div>
+      </a>
+      <a mat-list-item href="#">
+        <button mat-button color="primary">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+          <span>Messages directs</span>
+        </button>
+
+        <div *ngFor="let directMessage of directMessageList">
+          <app-direct-messages [directMessage]="directMessage"></app-direct-messages>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <app-search></app-search>
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>

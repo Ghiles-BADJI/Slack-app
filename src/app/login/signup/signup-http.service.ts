@@ -12,7 +12,6 @@ export class SignupHttpService {
   constructor(private readonly http: HttpClient) { }
 
   signup(payload: { email: string; password: string; }): Observable<User> {
-    console.log('payload', payload)
     return this.http.post<User>(`${environment.apiUrl}/user/signup`, payload);
   }
 

@@ -1,0 +1,18 @@
+:host {
+    display: block;
+}
+
+.mat-button {
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+}
+
+.mat-button.unread:not(.active) {
+    font-weight: bold;
+    color: white;
+}
+
+.active {
+    background-color: rgba(255,255,255, .9);
+}

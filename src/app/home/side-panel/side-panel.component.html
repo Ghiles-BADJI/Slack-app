@@ -1,1 +1,51 @@
-<p>side-panel works!</p>
+<mat-drawer-container class="example-container" autosize>
+
+  <mat-drawer #drawer class="example-sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar color="primary">
+      <span>Home</span>
+    </mat-toolbar>
+
+    <button mat-button color="primary">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+      <span>Non lus</span>
+    </button>
+
+    <div *ngFor="let message of unreadMessages">
+      <app-unread-messages [unreadMessage]="message"></app-unread-messages>
+    </div>
+
+    <button mat-button color="primary">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+      <span>Canaux</span>
+    </button>
+
+    <div *ngFor="let chanel of chanelList">
+      <app-chanel [chanel]="chanel"></app-chanel>
+    </div>
+
+    <button mat-button color="primary">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+      <span>Messages directs</span>
+    </button>
+
+    <div *ngFor="let directMessage of directMessageList">
+      <app-direct-messages [directMessage]="directMessage"></app-direct-messages>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+
+
+    <mat-toolbar [ngClass]="{'handset' : isHandset$ | async}">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <app-search></app-search>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+
+</mat-drawer-container>

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:3000',
-
+  workspaceId: 'T040SJDHM0X'
 };
 
 /*

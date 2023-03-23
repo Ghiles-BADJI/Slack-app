@@ -1,0 +1,13 @@
+
+<form [formGroup]="formGroup" class="chat-box" (ngSubmit)="getValue()" (keydown.enter)="$event.preventDefault(); getValue()">
+    <mat-form-field appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5" formControlName="message"></textarea>
+    </mat-form-field>
+    <div class="button-container">
+        <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>send</mat-icon>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,27 @@
+<span class="name-content" *ngIf="!isSentByConnectedUser()">{{ message.user.firstName }}</span>
+
+    <div class="message-content" [ngClass]="{ 'send': isSentByConnectedUser() }">
+        <div class="image-box" *ngIf="!isSentByConnectedUser()">
+            <img src="https://i1.wp.com/foot11.com/wp-content/uploads/2022/05/Karim-Benzema-LDC.jpg?fit=2560%2C1706&ssl=1"
+                width="24px" height="24px">
+        </div>
+        <div>
+            <div class="message-box">
+                <span>{{ message.text }}</span>
+            </div>
+        </div>
+        <div class="date-hour">
+            <span>{{ message.createAt | date:'medium' }}</span>
+        </div>
+    </div>
+
+    <!-- <div class="message-content" *ngIf="message.send == true">
+        <div class="date-hour-true">
+            <span class="span-date-hour">{{ message.date | date:'medium' }}</span>
+        </div>
+        <div>
+            <div class="message-box-true">
+                <span>{{ message.text }}</span>
+            </div>
+        </div>       
+    </div> -->

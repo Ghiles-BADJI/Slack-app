@@ -1,0 +1,81 @@
+.message-content {
+    display: flex;
+    gap: 8px;
+}
+
+.message-content.send {
+    flex-direction: row-reverse;
+}
+
+.image-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name-content {
+    padding-left: 40px;
+    font-size: 10px;
+}
+
+.date-hour {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min-content;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.date-hour-true {
+    display: flex;
+    justify-content: flex-end;
+    width: min-content;
+    padding-bottom: 10px;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.span-date-hour {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: flex-end;
+    max-height: max-content;
+    max-width: 100%;
+    background-color: rgb(93,61,94);
+    border-radius: 5px;
+    word-break: break-word;
+}
+
+.message-content.send .message-box {
+    background-color: aliceblue;
+    color: black;
+
+}
+
+.message-box-true {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: flex-end;
+    max-height: max-content;
+    max-width: 100%;
+    margin: 10px;
+    margin-top: 0px;
+    background-color: chocolate;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    border: 1px;
+    word-break: break-word;
+}
+
+img {
+    border-radius: 20px;
+}

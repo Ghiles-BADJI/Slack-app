@@ -1,1 +1,5 @@
-<p>chat works!</p>
+<div class="chat-container">
+    <app-message *ngFor="let m of messages" [message]="m"></app-message>
+</div>
+
+<app-text-area [conversationId]="conversationId" (sendMessages)="sendMessage($event)"></app-text-area>
