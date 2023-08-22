@@ -1,5 +1,5 @@
 
-    <a mat-button color="primary" [ngClass]="{'unread': unread}" [routerLink]="['/app', workspaceId, directMessage.id]" routerLinkActive="active">
+    <a mat-button color="primary" [ngClass]="{'unread': unread}" [routerLink]="['/conversation', directMessage.id]" routerLinkActive="active">
         <img [src]="directMessage.imageUrl || '/assets/images/photo-avatar-profil.png'" width="24px" height="24px">
         <span>{{directMessage.name}}</span>
     </a>

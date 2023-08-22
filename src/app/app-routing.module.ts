@@ -7,6 +7,7 @@ import { DirectMessagesComponent } from './home/side-panel/direct-messages/direc
 import { SidePanelComponent } from './home/side-panel/side-panel.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup/signup.component';
+import { ContactsComponent } from './home/side-panel/contacts/contacts.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -15,13 +16,18 @@ const routes: Routes = [
 
   { path: 'signup', component: SignupComponent },
 
-  { path: 'profil', component: ProfilComponent },
+  // { path: 'profil', component: ProfilComponent },
+
+  // { path: 'contacts', component: ContactsComponent },
+
 
   {
-    path: 'app/:workspaceId',
+    path: '',
     component: SidePanelComponent,
     children: [
-      { path: ':conversationId', component: ChatComponent },
+      { path: 'conversation/:conversationId', component: ChatComponent },
+      { path: 'profil', component: ProfilComponent },
+      { path: 'contacts', component: ContactsComponent }
     ]
   },
 

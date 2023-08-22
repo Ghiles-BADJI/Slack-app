@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ProfilDto } from './profil-dto';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { ProfilHttpService } from './profil-http.service';
 
 @Component({
   selector: 'app-profil',
@@ -18,9 +21,43 @@ export class ProfilComponent implements OnInit {
   userById: ProfilDto | undefined
   
 
-  constructor() { }
+  constructor(private readonly profilHttpService: ProfilHttpService, private readonly router: Router, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.getUserById();
   }
 
+  private getUserById() {
+
+    const user = JSON.parse(localStorage.getItem('user') || '{}')
+    console.log('userid', user)
+    this.profilHttpService.getUserById(user.id).subscribe((User) => {
+      console.log("user", User)
+      this.userById = User;
+      this.form.setValue({
+        lastName: User.lastName,
+        firstName: User.firstName,
+        dateOfBirth: User.dateOfBirth
+      })
+
+    });
+
+  }
+
+
+  updateUser() {
+    const user = JSON.parse(localStorage.getItem('user') || '{}')
+    const payload: ProfilDto = {
+      id: user.id,
+      lastName: this.form.value.lastName,
+      firstName: this.form.value.firstName,
+      dateOfBirth: this.form.value.dateOfBirth,
+    };
+
+    this.profilHttpService.updateProfil(payload).subscribe( () => {
+      
+        this._snackBar.open("Profil modifié", "Fermer")}
+      
+    );
+  }
 }

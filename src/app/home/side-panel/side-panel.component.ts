@@ -28,6 +28,7 @@ export class SidePanelComponent {
 
   ngOnInit(): void {
     const workspaceId = this.route.snapshot.params['workspaceId'];
+    console.log('workspaceId', workspaceId)
 
     // this.sidePanelHttpService.getAllConversations(workspaceId).subscribe((allConversations) => {
     //   this.unreadMessages = allConversations.unreadMessages;

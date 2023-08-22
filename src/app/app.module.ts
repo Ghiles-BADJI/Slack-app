@@ -19,18 +19,16 @@ import {MatSidenavContent, MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
-
-
-
-
+import {MatTableModule} from '@angular/material/table';
+import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup/signup.component';
-import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './home/chat/chat.component';
 import { SearchComponent } from './home/search/search.component';
@@ -45,6 +43,7 @@ import { ApiModule, Configuration, ConfigurationParameters } from './core/client
 import { environment } from 'src/environments/environment';
 import { NavigationComponent } from './home/side-panel/navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ContactsComponent } from './home/side-panel/contacts/contacts.component';
 
 function apiConfigFactory(): Configuration {
   const params: ConfigurationParameters = {
@@ -67,12 +66,14 @@ function apiConfigFactory(): Configuration {
     MessageComponent,
     TextAreaComponent,
     ProfilComponent,
-    NavigationComponent
+    NavigationComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+
     MatSliderModule,
     MatButtonModule,
     MatCardModule,
@@ -84,14 +85,18 @@ function apiConfigFactory(): Configuration {
     MatToolbarModule,
     MatListModule,
     MatDatepickerModule,
+    MatTableModule,
+    MatNativeDateModule,
+
     HttpClientModule,
     BrowserAnimationsModule,
     ApiModule.forRoot(apiConfigFactory),
-    LayoutModule
+    LayoutModule,
+    MatPaginatorModule
   ],
 
   providers: [
-    {provide: LOCALE_ID, useValue: 'fr' }
+    {provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }
   ],
   bootstrap: [AppComponent]
 })
