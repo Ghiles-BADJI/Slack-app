@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit  {
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
           //this.router.navigate(['/app/' + environment.workspaceId]);
-          this.router.navigate(['/app/']);
+          this.router.navigate(['conversation/:conversationId']);
         }
       },
       (err) => { // retour erreur
