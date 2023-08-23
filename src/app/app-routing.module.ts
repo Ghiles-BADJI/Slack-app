@@ -27,7 +27,9 @@ const routes: Routes = [
     children: [
       { path: 'conversation/:conversationId', component: ChatComponent },
       { path: 'profil', component: ProfilComponent },
-      { path: 'contacts', component: ContactsComponent }
+      { path: 'contacts', component: ContactsComponent },
+      { path: 'home', component: ChatComponent }
+
     ]
   },
 
